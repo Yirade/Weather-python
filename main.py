@@ -1,7 +1,7 @@
 
 from tkinter import *
 
-import requests, json, pytemperature
+import requests, json, pytemperature, webbrowser
 
 from PIL import ImageTk, Image
 
@@ -20,10 +20,9 @@ palette = ["White",#n.0 White
            "#2B2930",#n.2 Dark gray
            "#6B6A62",#n.3 Ligth gray
            "#FF66C0",#n.4 Pink
-           2]
+           0]
 
 api_key = "blank"
-api_key_personal = 'cb7b8cefa88b491b91f37100d83e51d4'
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
 file_data = ""
@@ -98,7 +97,11 @@ def th():
         theme[4] = palette[0]
     elif palette[5] == 2:
         #Pink
-        theme = palette      
+        theme[0] = palette[0]
+        theme[1] = palette[1]
+        theme[2] = palette[2]
+        theme[3] = palette[4]
+        theme[4] = palette[4]     
 #--------------------------------------------------#    
 #Api Allocation
 def btn_ok(link):
@@ -116,7 +119,9 @@ def btn_ok(link):
         showwarning(title="Invalid api key!", message="The api key format is incorrect!")
         txt_sett1.delete(0, len(api_key)+1)
 #--------------------------------------------------#
-
+def callback(url):
+    webbrowser.open_new(url)
+#--------------------------------------------------#
 #Ini
 file_cond()
 th()
@@ -124,7 +129,7 @@ th()
 #Root Window
 root = Tk()
 root.title(title + city)
-root.geometry('250x190')
+root.geometry('270x190')
 root.configure(bg=theme[2])
 #Components
 lbl1  = Label(root, text = phrase[0], fg=theme[0], bg=theme[2])
@@ -156,9 +161,16 @@ def result_screen():#work in progress...
 def about():#work in progress...
     
     ab = Tk()
-    ab.title("Settings")
+    ab.title("Aboat")
     ab.geometry("200x100")
     ab.configure(bg=theme[2])
+        #Content
+    lbl_about1 = Label(ab, text="Project maded by Yirade", bg=theme[2], fg=theme[0])
+    lbl_about1.pack(side=TOP, pady=(10))
+    
+    link1 = Label(ab, text="My Git Hub", fg="blue", bg=theme[2], cursor="hand2")
+    link1.pack(pady=(22))
+    link1.bind("<Button-1>", lambda e: callback("https://github.com/Yirade"))
     
 #--------------------------------------------------#
     
@@ -168,7 +180,7 @@ def setting():
     
     settings = Tk()
     settings.title("Settings")
-    settings.geometry("420x200")
+    settings.geometry("450x200")
     settings.configure(bg=theme[2])
         #Content - api
     lbl_sett1 = Label(settings, text="api key", bg=theme[2], fg=theme[0])
@@ -180,7 +192,7 @@ def setting():
     txt_sett1.grid(column =1, row =0)
     
     btn_sett1 = Button(settings, text = "ok", fg = theme[0], bg=theme[3], command=lambda:btn_ok(txt_sett1.get()))
-    btn_sett1.grid(column=2, row=0, padx=(5))
+    btn_sett1.grid(column=2, row=0, padx=(5), pady=(10))
         #Content - theme
     lbl_th0 = Label(settings, text="Select a theme:", fg=theme[0], bg=theme[2])
     lbl_th0.grid(column=0, row=3, padx=(5,0), pady=(25,15))
@@ -192,7 +204,7 @@ def setting():
     btn_th_white.grid(column=1, row=4, padx=(25,25))
     
     btn_th_pink = Button(settings, text="Pink", fg= palette[1], bg=palette[4], command=lambda:th_ch(2))
-    btn_th_pink.grid(column=2, row=4)
+    btn_th_pink.grid(column=2, row=4, padx=(25))
     
     btn_about = Button(settings, text="About", fg= theme[0], bg=theme[2], command=lambda:about())
     btn_about.grid(column=1, row=5, pady=(25))
@@ -240,22 +252,15 @@ def clicked():
             phrase[3] = str(current_temperature)
             
             phrase[3] = round(pytemperature.k2c(float(phrase[3])),2)
-            print(phrase[3])
-            
-            
-            
+            print("converted value", phrase[3])
+                         
             rez = phrase[1] + res + phrase[2] + phrase[5] + str(phrase[3]) + degrees + phrase[4]
             print(rez)
             print(city)
             label = Message(root, text= rez)
 
             showinfo(title= city, message= rez)
-            txt.delete(0, len(city)+1)
-        
-
-
-    
-    
+            txt.delete(0, len(city)+1)               
 
 #Top menu
     
@@ -269,7 +274,7 @@ menu.add_command (label="Settings", command=setting, activebackground=theme[3])
 btn = Button(root, text = "Click me" , fg = theme[0], bg=theme[4], command=clicked)
 btn.grid(column=2, row=5)
 
-lbl2 = Label(root, text = "made by Yirade", fg = palette[3], bg = theme[2])
+lbl2 = Label(root, text = "Project by Yirade", fg = palette[3], bg = theme[2])
 lbl2.grid(column=2, row=6, pady=(50))
 
 root.mainloop()

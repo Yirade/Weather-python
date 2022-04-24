@@ -1,5 +1,6 @@
 # WHEATER PYTON
 ![WHEATER](https://cdn-icons-png.flaticon.com/512/1163/1163661.png)
+
 This is my first project in python using API and GUI interfaces
 
 ## Purpose of the project ❔
@@ -15,5 +16,6 @@ The purpose of this project is to learn how to use the concepts of api and graph
 
 ## About me
 ![wave](https://cdn-icons-png.flaticon.com/512/3798/3798302.png)
+
 Hi, I'm Yirade, I'm currently a student at Stefan cel Mare University in Suceava.I am a great lover of technology, programming, modding, game development. At the moment I am still in the beginning, but I hope I can one day become a real programmer, but until then you  take care of yourself!
 

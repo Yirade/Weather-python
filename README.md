@@ -14,8 +14,7 @@ The purpose of this project is to learn how to use the concepts of api and graph
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## About me
-![wave](https://cdn-icons-png.flaticon.com/512/3798/3798302.png)
+## About me 👋
 
 Hi, I'm Yirade, I'm currently a student at Stefan cel Mare University in Suceava.I am a great lover of technology, programming, modding, game development. At the moment I am still in the beginning, but I hope I can one day become a real programmer, but until then you  take care of yourself!
 

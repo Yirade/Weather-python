@@ -11,7 +11,7 @@ The purpose of this project is to learn how to use the concepts of api and graph
 - Install the dependencies
 - Enjoy
 
-## License
+## License 🔥
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## About me 👋

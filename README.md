@@ -7,7 +7,8 @@ This is my first project in python using API and GUI interfaces
 The purpose of this project is to learn how to use the concepts of api and graphical interfaces, using the python programming language
 
 ## For get started 📋
-- Make sure you have python 3.x installed- Get an api Key from the following link: [openweathermap](https://home.openweathermap.org/users/sign_up)
+- Make sure you have python 3.x installed
+- Get an api Key from the following link: [openweathermap](https://home.openweathermap.org/users/sign_up)
 - Install the dependencies
 - Enjoy
 

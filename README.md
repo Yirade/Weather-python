@@ -1,5 +1,5 @@
 # WHEATER PYTON
-![WHEATER](https://cdn-icons-png.flaticon.com/512/1163/1163661.png)
+![WEATHER](https://cdn-icons-png.flaticon.com/512/1163/1163661.png)
 
 This is my first project in python using API and GUI interfaces
 

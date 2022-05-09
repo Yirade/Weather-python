@@ -1,4 +1,4 @@
-# WHEATER PYTON
+# WEATHER PYTON
 ![WEATHER](https://cdn-icons-png.flaticon.com/512/1163/1163661.png)
 
 This is my first project in python using API and GUI interfaces
@@ -13,7 +13,7 @@ The purpose of this project is to learn how to use the concepts of api and graph
 - Enjoy
 
 ## License 🔥
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU](https://choosealicense.com/licenses/gnu/)
 
 ## About me 👋
 
